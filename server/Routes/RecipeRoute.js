@@ -8,7 +8,7 @@ const client = createClient({
   url: "redis://default:b5we5Cs4ZIDJrxRiSusw6GHooUEA9g2h@redis-10802.c99.us-east-1-4.ec2.cloud.redislabs.com:10802",
 });
 client.on("connect", () => {
-  console.log("Connected to Redis");
+  console.log("Connected to Redis...");
 });
 client.on("error", (err) => console.log(err));
 
