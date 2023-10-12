@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const { recipe_router, client } = require("./Routes/RecipeRoute");
+const { recipe_router } = require("./Routes/RecipeRoute");
 const favouriteRecipe_router = require("./Routes/FavouriteRecipeRoute");
 const connection = require("./Configs/db");
 const user_router = require("./Routes/UserRouter");
@@ -25,7 +25,6 @@ app.use("/favourites", favouriteRecipe_router);
 app.listen(process.env.PORT, async () => {
   try {
     await connection;
-    await client.connect();
     console.log("Connected To Db ");
     console.log(`Listining on server ${process.env.PORT}`);
   } catch (error) {
